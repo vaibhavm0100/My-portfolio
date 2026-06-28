@@ -1,27 +1,69 @@
-body{
-    background:#1f2937;
-    color:white;
-    font-family:Arial,sans-serif;
+/* ===============================
+   Global
+================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
     scroll-behavior:smooth;
 }
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    background:linear-gradient(
-    135deg,
-    #0f172a,
-    #1e293b
-    );
+body{
+    background:#1f2937;
+    color:#ffffff;
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.6;
+}
+
+/* ===============================
+   Navbar
+================================= */
+
+.navbar{
+    background:#111827 !important;
 }
 
 .navbar-brand{
     color:#0dcaf0 !important;
+    font-weight:bold;
+    font-size:1.5rem;
 }
+
+.nav-link{
+    color:white !important;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:#0dcaf0 !important;
+}
+
+/* ===============================
+   Hero Section
+================================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+}
+
+.hero h1{
+    font-weight:bold;
+}
+
+.hero p{
+    color:#d1d5db;
+}
+
+/* ===============================
+   Profile Image
+================================= */
 
 .profile-img{
     width:300px;
@@ -29,7 +71,12 @@ html{
     object-fit:cover;
     border-radius:50%;
     border:5px solid #0dcaf0;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
+
+/* ===============================
+   Social Icons
+================================= */
 
 .social-links a{
     color:white;
@@ -40,23 +87,86 @@ html{
 
 .social-links a:hover{
     color:#0dcaf0;
+    transform:scale(1.2);
 }
+
+/* ===============================
+   Sections
+================================= */
 
 section{
     padding:80px 0;
     text-align:center;
 }
 
-.skill-card,
-.project-card{
+.section-title{
+    font-weight:bold;
+    margin-bottom:20px;
+    position:relative;
+}
+
+.section-title::after{
+    content:"";
+    width:70px;
+    height:4px;
+    background:#0dcaf0;
+    display:block;
+    margin:12px auto;
+    border-radius:5px;
+}
+
+/* ===============================
+   Cards
+================================= */
+
+.card{
+    border:none;
+    border-radius:12px;
     transition:.4s;
 }
 
-.skill-card:hover,
-.project-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 10px 25px rgba(0,0,0,.3);
+.skill-card,
+.project-card{
+    cursor:pointer;
 }
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+/* ===============================
+   Buttons
+================================= */
+
+.btn-info{
+    color:white;
+    font-weight:bold;
+}
+
+.btn-outline-light:hover{
+    color:#111827;
+}
+
+/* ===============================
+   Contact Form
+================================= */
+
+#contact form{
+    background:#ffffff;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+#contact input,
+#contact textarea{
+    border-radius:8px;
+}
+
+/* ===============================
+   Footer
+================================= */
 
 footer{
     background:#111827;
@@ -64,22 +174,25 @@ footer{
     padding:20px;
 }
 
-.btn-info{
-    color:white;
-    font-weight:bold;
-}
+/* ===============================
+   Responsive
+================================= */
 
-#contact form {
-  background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
-.card {
-  transition: 0.3s ease;
-}
+@media(max-width:768px){
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    .hero{
+        text-align:center;
+        padding-top:80px;
+    }
+
+    .profile-img{
+        width:220px;
+        height:220px;
+        margin-top:30px;
+    }
+
+    .social-links a{
+        font-size:25px;
+    }
+
 }
